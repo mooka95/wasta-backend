@@ -1,4 +1,4 @@
-const Admin = require("../Model/WebsiteAdmin");
+const Admin = require("../Model/Admin");
 const CustomError= require('../helpers/CustomError')
 
 module.exports= async (req,res,next)=>{
