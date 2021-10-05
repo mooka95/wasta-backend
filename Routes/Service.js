@@ -4,7 +4,7 @@ const router= express.Router();
 const Service=require('../Model/Service');
 
 
-router.post('/',isAdminAuthorized,async (req,res,next)=>{
+router.post('/',async (req,res,next)=>{
 
 const service=new Service(req.body);
 const addedService= await service.save();

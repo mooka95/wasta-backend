@@ -4,7 +4,7 @@
   "description": "wasta-website",
   "main": "index.js",
   "scripts": {
-   
+    "debug": " nodemon --inspect",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },

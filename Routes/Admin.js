@@ -4,7 +4,7 @@ const router = express.Router();
 const Admin =require('../Model/Admin');
 const CustomError=require('../helpers/CustomError')
 
-router.post('/',isAdminAuthorized,async (req,res,next)=>{
+router.post('/',async (req,res,next)=>{
     const admin = new Admin(req.body);
     const adminSaved= await admin.save();
 
