@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 const signJwt=util.promisify(jwt.sign);
 const verifyJwt=util.promisify(jwt.verify);
 
-const AdminSchema =  mongoose.Schema({
+const AdminSchema =  new mongoose.Schema({
     email: {
         type: String,
          required:true,
@@ -55,5 +55,5 @@ AdminSchema.statics.getAdminFromToken= async function(token){
      return admin;
 }
 
-  const admin=mongoose.model('Admins',AdminSchema);
+  const admin=mongoose.model('admins',AdminSchema);
   module.exports=admin;

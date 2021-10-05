@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const extendSchema = require('mongoose-extend-schema');
+
 
 
 const ClientSchema =   new mongoose.Schema({
