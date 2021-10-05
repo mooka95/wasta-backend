@@ -41,5 +41,5 @@ const ClientSchema =   new mongoose.Schema({
 
   })
 
-  const client=mongoose.model('clients',ClientSchema);
+  const client= mongoose.model('clients',ClientSchema);
   module.exports=client;

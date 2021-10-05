@@ -55,5 +55,5 @@ AdminSchema.statics.getAdminFromToken= async function(token){
      return admin;
 }
 
-  const admin=mongoose.model('admins',AdminSchema);
+  const admin= mongoose.model('admins',AdminSchema);
   module.exports=admin;

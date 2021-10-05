@@ -1,7 +1,7 @@
 const express = require('express');
 const isAdminAuthorized = require('../middlewares/isAdminAuthorized');
 const router = express.Router();
-const Admin =require("../Model/Admin")
+const Admin =require("../Model/WebsiteAdmin")
 const CustomError=require('../helpers/CustomError')
 
 router.post('/',isAdminAuthorized,async (req,res,next)=>{
