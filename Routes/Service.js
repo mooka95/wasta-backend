@@ -4,11 +4,32 @@ const router= express.Router();
 const Service=require('../Model/Service');
 
 
-router.post('/',isAdminAuthorized,async (req,res,next)=>{
+const multer  = require('multer');
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, './uploads/')
+  },
+  filename: function (req, file, cb) {
+   
+    cb(null,  file.originalname);
+  }
+})
+const upload = multer({ storage: storage })
 
-const service=new Service(req.body);
+
+router.post('/',upload.single('imageUrl'),async (req,res,next)=>{
+  console.log(req.file)
+  console.log(req.body)
+
+const service=new Service({
+  title:req.body.title,
+  description:req.body. description,
+  price:req.body.price,
+  imageUrl:req.file.path
+});
 const addedService= await service.save();
 res.status(200).json({
+  addedService,
    "message":"Service Added Succesfully"
 })
 

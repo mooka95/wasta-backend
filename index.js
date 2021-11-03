@@ -6,6 +6,7 @@ const cors = require('cors')
 require('./db')
 
 app.use(express.json());
+app.use('/uploads',express.static('uploads'))
 
 const adminRoute=require('./Routes/Admin');
 const clientRoute=require('./Routes/Client');
