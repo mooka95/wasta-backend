@@ -14,10 +14,7 @@ const storage = multer.diskStorage({
     cb(null,  Date.now()+path.extname(file.originalname) );
   }
 })
-const upload = multer({ storage: storage,limits:{
-
-  fileSize:1024*1024*5
-} })
+const upload = multer({ storage: storage })
 
 
 router.post('/',upload.single('imageUrl'),async (req,res,next)=>{
