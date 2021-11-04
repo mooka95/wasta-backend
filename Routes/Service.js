@@ -2,16 +2,16 @@ const express = require('express');
 const isAdminAuthorized = require('../middlewares/isAdminAuthorized');
 const router= express.Router();
 const Service=require('../Model/Service');
-
+const path = require('path');
 
 const multer  = require('multer');
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, './uploads/')
+    cb(null, 'images')
   },
   filename: function (req, file, cb) {
    
-    cb(null,  file.originalname);
+    cb(null,  Date.now()+path.extname(file.originalname) );
   }
 })
 const upload = multer({ storage: storage })
