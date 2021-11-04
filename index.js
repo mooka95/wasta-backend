@@ -6,16 +6,15 @@ const cors = require('cors')
 require('./db')
 
 app.use(express.json());
-app.use('/Images' , express.static('uploads'));
+
 
 
 const adminRoute=require('./Routes/Admin');
 const clientRoute=require('./Routes/Client');
 const serviceRoute=require('./Routes/Service')
-
-
-
 app.use(cors());
+
+app.use('/Images' , express.static('Images'));
 
 app.get('/', (req, res) => {
   
