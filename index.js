@@ -18,7 +18,7 @@ app.use('/Images' , express.static('Images'));
 
 app.get('/', (req, res) => {
   
-  res.send('Hello Worssld!')
+  res.send('Hello Worssld!')  
 })
 app.use(['/client','/Client','/clients'],clientRoute);
 app.use(['/admin','/admins'],adminRoute);

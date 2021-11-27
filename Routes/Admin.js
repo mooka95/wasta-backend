@@ -29,19 +29,17 @@ router.post('/login',async (req,res,next)=>{
       }
       const token = await  admin.generateToken();
       admin.token=token
-
-      
-
       res.json({
           admin
       })
 
-
-
-
 })
-router.get('/',(req,res,next)=>{
-    res.send('admin')
+router.get('/',isAdminAuthorized,(req,res,next)=>{
+    
+    const admin=req.admin;
+    res.status(200).json({
+        admin
+    })
 })
 
 module.exports=router

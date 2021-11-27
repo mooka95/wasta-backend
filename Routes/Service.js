@@ -38,7 +38,6 @@ res.status(200).json({
 
 router.get('/',async (req,res,next)=>{
   const services= await Service.find({});
-
   res.status(200).json({
       services
   })
@@ -56,15 +55,7 @@ res.status(200).json({
 
 
 })
-// router.get('/image',(req,res,next)=>{
 
-//   const imageUrl = req.params.image;
-
-//   res.download('./'+imageUrl);
-
-
-
-// })
 
 
 
